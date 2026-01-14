@@ -1,10 +1,4 @@
-Below is the **exact README.md in clean copy-paste format**.
-You can paste this **directly into GitHub → README.md** with **no edits required**.
-
----
-
-```markdown
-# CausalLib – Production-Grade Causal Inference in Python
+﻿# CausalLib – Production-Grade Causal Inference in Python
 
 CausalLib is a Python library for estimating causal treatment effects from observational data using well-established causal inference methods.  
 It provides a consistent API, diagnostics for validating assumptions, and evaluation utilities to support reliable causal analysis in production and research workflows.
@@ -55,91 +49,87 @@ The system is designed to work with user-provided machine learning models and in
 
 ## Architecture
 
-```
+``
 
-┌──────────────────────────────────────────┐
-│           Estimation Layer               │
-│  IPW | Matching | AIPW | X/R Learner     │
-└───────────────┬─────────────────────────┘
-│
-┌───────────────▼─────────────────────────┐
-│         Diagnostics & Assumptions        │
-│  Overlap | Balance | Weights | Reports   │
-└───────────────┬─────────────────────────┘
-│
-┌───────────────▼─────────────────────────┐
-│        Validation & Evaluation           │
-│  Input checks | Metrics | Errors         │
-└─────────────────────────────────────────┘
+           Estimation Layer               
+  IPW | Matching | AIPW | X/R Learner     
 
-```
+
+
+         Diagnostics & Assumptions        
+  Overlap | Balance | Weights | Reports   
+
+
+
+        Validation & Evaluation           
+  Input checks | Metrics | Errors         
+
+``
 
 ---
 
 ## Repository Structure
 
-```
-
+``
 causallib-engineering/
-├── Root Files
-│   ├── .gitignore
-│   ├── .readthedocs.yml
-│   ├── CODE_OF_CONDUCT.md
-│   ├── CONTRIBUTING.md
-│   ├── LICENSE
-│   ├── QUICKSTART.md
-│   ├── README.md
-│   ├── requirements.txt
-│   ├── setup.py
-│   └── Test Suites
-│       ├── test_phase1_hardening.py
-│       ├── test_phase2_hardening.py
-│       └── test_phase3.py
-│
-├── .github/workflows/
-│   └── build.yml
-│
-├── causallib/
-│   ├── **init**.py
-│   ├── analysis/
-│   ├── contrib/
-│   ├── datasets/
-│   ├── diagnostics/
-│   ├── effects/
-│   ├── estimation/
-│   ├── evaluation/
-│   ├── metrics/
-│   ├── model_selection/
-│   ├── positivity/
-│   ├── preprocessing/
-│   ├── propensity/
-│   ├── simulation/
-│   ├── survival/
-│   ├── utils/
-│   ├── validation/
-│   └── tests/
-│
-├── docs/
-│
-├── docs_internal/
-│
-└── examples/
+ Root Files
+    .gitignore
+    .readthedocs.yml
+    CODE_OF_CONDUCT.md
+    CONTRIBUTING.md
+    LICENSE
+    QUICKSTART.md
+    README.md
+    requirements.txt
+    setup.py
+    Test Suites
+        test_phase1_hardening.py
+        test_phase2_hardening.py
+        test_phase3.py
 
-````
+ .github/workflows/
+    build.yml
+
+ causallib/
+    **init**.py
+    analysis/
+    contrib/
+    datasets/
+    diagnostics/
+    effects/
+    estimation/
+    evaluation/
+    metrics/
+    model_selection/
+    positivity/
+    preprocessing/
+    propensity/
+    simulation/
+    survival/
+    utils/
+    validation/
+    tests/
+
+ docs/
+
+ docs_internal/
+
+ examples/
+``
 
 ---
 
 ## Installation
 
-```bash
+``ash
 pip install causallib
-````
+``
 
 ---
 
 ## Quick Example
 
-```python
+``python
 from causallib.estimation import IPW
 from causallib.datasets import load_nhefs
 from sklearn.linear_model import LogisticRegression
@@ -151,19 +141,19 @@ estimator.fit(X, treatment)
 
 ate = estimator.estimate_ate(X, treatment, outcome)
 print(ate)
-```
+``
 
 ---
 
 ## Diagnostics Example
 
-```python
+``python
 from causallib.diagnostics import PropensityScoreStats
 
 stats = PropensityScoreStats(estimator=estimator)
 report = stats.report(X, treatment)
 print(report)
-```
+``
 
 ---
 
@@ -184,7 +174,7 @@ print(report)
 
 ## Examples
 
-The `examples/` directory contains Jupyter notebooks covering:
+The examples/ directory contains Jupyter notebooks covering:
 
 * IPW and matching
 * Doubly robust estimation
@@ -196,17 +186,17 @@ The `examples/` directory contains Jupyter notebooks covering:
 
 ## Documentation
 
-* API and module documentation: `docs/`
-* Step-by-step walkthroughs: `examples/`
-* Design and architectural references: `docs_internal/`
+* API and module documentation: docs/
+* Step-by-step walkthroughs: examples/
+* Design and architectural references: docs_internal/
 
 ---
 
 ## Testing
 
-```bash
+``ash
 pytest
-```
+``
 
 All core test suites pass.
 
@@ -223,16 +213,3 @@ Apache License 2.0
 If used in academic work, please cite:
 
 Shimoni et al., *An Evaluation Toolkit to Guide Model Selection and Cohort Definition in Causal Inference*, 2019.
-
-```
-
----
-
-If you want, next I can:
-- Clean **QUICKSTART.md** to match this tone
-- Decide **which docs to keep private**
-- Write **resume bullets** aligned with this repo
-- Simulate **interview questions based only on this README**
-
-Just tell me what’s next 🚀
-```
